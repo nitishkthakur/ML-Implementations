@@ -50,6 +50,8 @@ class FactorizationMachine:
         )
 
         # Add the second order terms
+        # We want to write a for loop - and in each loop, evaluate the correct dot product
+
         X_poly = self.poly_features.transform(X)[:, 1 + self.n_features :]
         matrix_factors = self.weights[self.second_order_feature_indices]
         matrix_factors = matrix_factors.reshape(self.n_features, self.n_factors)
